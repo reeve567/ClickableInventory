@@ -40,6 +40,12 @@ public class ClickableInventory implements Listener {
 		inventoryItems.put(item.itemStack.hashCode(), item);
 	}
 
+	public void setBackground(NonClickableItem item) {
+		for (int i = 0; i < inventory.getSize(); i++) {
+			setSlot(item, i);
+		}
+	}
+
 	public Inventory getInventory() {
 		return inventory;
 	}
