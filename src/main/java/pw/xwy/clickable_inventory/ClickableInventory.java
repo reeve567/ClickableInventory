@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
@@ -40,9 +41,9 @@ public class ClickableInventory implements Listener {
 		inventoryItems.put(item.itemStack.hashCode(), item);
 	}
 
-	public void setBackground(NonClickableItem item) {
+	public void setBackground(ItemStack item) {
 		for (int i = 0; i < inventory.getSize(); i++) {
-			setSlot(item, i);
+			setSlot(new NonClickableItem(item), i);
 		}
 	}
 
